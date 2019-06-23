@@ -21,8 +21,6 @@ def combine():
                 position2 = ''.join(("C", str(row2)))
                 the_combine[position1].value = the_time[position2].value
     the_combine["D1"] = "学习时间"
-    the_xlsx.remove(the_xlsx["students"])
-    the_xlsx.remove(the_xlsx["time"])
     the_xlsx.save('/home/shiyanlou/Code/courses.xlsx')       
 
 def split():
