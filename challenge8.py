@@ -24,11 +24,9 @@ def main():
     urls = []
     logs = open_parser('/home/shiyanlou/Code/nginx.log')
     for log in logs:
-        if(re.findall('11/Jan/2017', log[1]) != []):
-            # ips.append(re.findall('[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}', log[0])[0])
+        if(re.findall('11/Jan/2017', log[1]) != []):            
             ips.append(log[0])
-        if(int(log[3]) == 404):
-            # urls.append(re.findall('\s.+\s', log[2])[0].strip())
+        if(int(log[3]) == 404):            
             urls.append(log[2])
     ipc = Counter(ips)
     urlc = Counter(urls)
