@@ -10,15 +10,15 @@ db = SQLAlchemy(app)
 
 class File(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80), nullable=False)
+    title = db.Column(db.String(80), nullable=False, unique=True)
     created_time = db.Column(db.DateTime)
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
-    category = db.relationship('Category', backref=db.backref('files'))
+    category = db.relationship('Category', uselist=False)
     content = db.Column(db.Text)
-    def __init__(self, title, created_time, category_id, content):
+    def __init__(self, title, created_time, category, content):
         self.title = title
         self.created_time = created_time
-        self.category = category_id
+        self.category = category
         self.content = content
     def __repr__(self):
         return  '<File(name=%s)>' % self.name
@@ -26,6 +26,7 @@ class File(db.Model):
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False, unique=True)
+    files = db.relationship('File')
     def __init__(self, name):
         self.name = name
     def __repr__(self):
