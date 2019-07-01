@@ -69,14 +69,16 @@ file2.add_tag('python')
 @app.route('/')
 def index():
     title_list = []
+    tag_list = []
     the_data = {}
     the_files = File.query.all()    
     for the_file in the_files:
         the_data['id'] = the_file.id
         the_data['title'] = the_file.title
         the_name = the_file.title
-
-        the_data['tags'] = file1.tags()        
+        for x in db2.the_name.find():
+            tag_list.append(x['tag'])
+        the_data['tags'] = tag_list        
         title_list.append(the_data)
         the_data = {}
     return render_template('index.html', titles=title_list)
