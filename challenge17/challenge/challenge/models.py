@@ -9,7 +9,7 @@ class Repository(Base):
     __tablename__ = 'repositories'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(64), index=True)
+    name = Column(String(64))
     update_time = Column(DateTime(1024))
     commits = Column(Integer)
     branches = Column(Integer)
