@@ -1,0 +1,20 @@
+<html lang="zh-CN">
+    <head>
+        <title>Index</title>
+        <link href="{{ url_for('static', filename="bootstrap-3.3.7-dist/css/bootstrap.min.css") }}" rel="stylesheet">
+    </head>
+    <body>
+        <script src="{{ url_for('static', filename="bootstrap-3.3.7-dist/js/bootstrap.min.js") }}"></script>
+        <li>
+            {% for the_title in titles %}
+                <a href='{{ url_for('file', file_id=the_title.id) }}'> {{ the_title.title }}</a>
+                <p> {{ the_title.tags }} </p>
+            {% endfor %}
+        </li>
+    </body>
+</html>
+
+
+
+
+

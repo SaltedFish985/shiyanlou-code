@@ -1,0 +1,14 @@
+<html lang="zh-CN">
+    <head>
+        <title>File</title>
+        <link href="{{ url_for('static', filename="bootstrap-3.3.7-dist/css/bootstrap.min.css") }}" rel="stylesheet">
+    </head>
+    <body>
+        <script src="{{ url_for('static', filename="bootstrap-3.3.7-dist/js/bootstrap.min.js") }}"></script>
+        <li>
+            <p> content: {{ the_data.content }} </p>
+            <p> created_time: {{ the_data.created_time }} </p>
+            <p> category: {{ the_data.category }} </p>
+        </li>
+    </body>
+</html>
