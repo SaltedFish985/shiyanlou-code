@@ -1,7 +1,7 @@
 import scrapy
 from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
-from flask_doc.items import FlaskItem
+from flask_doc.items import PageItem
 
 class FlaskSpider(scrapy.spiders.CrawlSpider):
     name = 'flask'
