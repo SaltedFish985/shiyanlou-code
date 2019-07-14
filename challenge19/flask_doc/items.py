@@ -1,5 +1,5 @@
 import scrapy
 
-class FlaskItem(scrapy.Item):
+class PageItem(scrapy.Item):
     url = scrapy.Field()
     text = scrapy.Field()
