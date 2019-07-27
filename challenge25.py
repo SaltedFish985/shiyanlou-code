@@ -27,7 +27,7 @@ def co2():
         highest_emissions.append(hcountry_emission)
         lowest_emission_country.append(lcountry)
         lowest_emissions.append(lcountry_emission)
-    result_dict = {'Sum emissions':sum_emissions, 'Highest eission country':highest_emission_country, 'Highest emissions':highest_emissions, 'Lowest emission country':lowest_emission_country, 'Lowest emissions':lowest_emissions}
+    result_dict = {'Sum emissions':sum_emissions, 'Highest emission country':highest_emission_country, 'Highest emissions':highest_emissions, 'Lowest emission country':lowest_emission_country, 'Lowest emissions':lowest_emissions}
     results = pd.DataFrame(result_dict, index=group_list)
     results.index.name = 'Income group'
     return results
